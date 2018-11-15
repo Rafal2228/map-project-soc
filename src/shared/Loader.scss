@@ -1,0 +1,15 @@
+.loader {
+  animation: loaderRotation infinite 1s linear;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes loaderRotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
