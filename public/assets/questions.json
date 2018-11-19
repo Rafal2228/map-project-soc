@@ -1,0 +1,38 @@
+{
+  "categories": [
+    {
+      "name": "Psycho",
+      "questions": [
+        {
+          "content": "Opisz zjawisko deprywacji sensorycznej"
+        },
+        {
+          "content": "Co to jest świadomość introspekcyjna?"
+        },
+        {
+          "content": "Czym jest i jaką rolę w procesie samoregulacji pełni uwaga?"
+        },
+        {
+          "content": "Jakim rodzajem umysłowej reprezentacji jest schemat?"
+        },
+        {
+          "content": "Na czym polega proces autopercepcji?"
+        }
+      ]
+    },
+    {
+      "name": "Stress",
+      "questions": [
+        {
+          "content": "Jak radzić sobie ze stresem (skuteczne sposoby na stres)"
+        },
+        {
+          "content": "Jak się nie denerwować i opanować nerwy w trudnych sytuacjach"
+        },
+        {
+          "content": "Jak ograniczyć stresory"
+        }
+      ]
+    }
+  ]
+}

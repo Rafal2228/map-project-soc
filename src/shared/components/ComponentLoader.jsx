@@ -4,15 +4,7 @@ import { Loader } from './Loader';
 export function ComponentLoader(Component) {
   return function(props) {
     return (
-      <Suspense
-        maxDuration={0}
-        fallback={() => (
-          <div>
-            test
-            <Loader />
-          </div>
-        )}
-      >
+      <Suspense fallback={<Loader />}>
         <Component {...props} />
       </Suspense>
     );

@@ -1,0 +1,23 @@
+@import '../../theme';
+@import '../../utils';
+
+.nav {
+  display: flex;
+  flex: 1 auto;
+  justify-content: space-between;
+  background: $primary;
+  color: $white;
+
+  &__link {
+    @include withTransition(background-color);
+    display: block;
+    padding: 1em;
+    text-decoration: none;
+    background: $primary;
+    color: $white;
+
+    &:hover {
+      background-color: lighten($primary, 10);
+    }
+  }
+}

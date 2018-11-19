@@ -1,0 +1,13 @@
+@mixin withTransition($props...) {
+  $transition: null;
+
+  @each $prop in $props {
+    @if (index($props, $prop) == 0) {
+      $transition: $prop 0.1s linear;
+    } @else {
+      $transition: $transition, $prop 0.1s linear;
+    }
+  }
+
+  transition: $transition;
+}
