@@ -5,13 +5,9 @@ import { compose } from 'redux';
 import { withRouter } from 'react-router-dom';
 import { loadQuestions } from '../thunks/questions.thunks';
 
-function mapDispatchToProps(dispatch) {
-  return {
-    loadQuestions(url: string) {
-      loadQuestions(url)(dispatch);
-    },
-  };
-}
+const mapDispatchToProps = {
+  loadQuestions,
+};
 
 interface SetupProps {
   loadQuestions: (url: string) => void;

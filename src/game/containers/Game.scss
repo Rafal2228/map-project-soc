@@ -1,0 +1,9 @@
+.game {
+  &__wrapper {
+    position: relative;
+    display: flex;
+    flex: 1 auto;
+    align-items: center;
+    justify-content: center;
+  }
+}

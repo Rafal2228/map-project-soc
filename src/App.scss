@@ -2,5 +2,8 @@
   &__container {
     margin: 0;
     padding: 0;
+    display: flex;
+    flex: 1 auto;
+    flex-direction: column;
   }
 }

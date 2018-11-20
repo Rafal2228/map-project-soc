@@ -15,7 +15,7 @@ export const questionsReducer = createReducer(QUESTIONS_INITIAL_STATE, {
   [LOAD_QUESTIONS_SUCCESS]: (state, { payload }) => ({
     ...state,
     loading: false,
-    categories: payload && payload.categories,
+    categories: payload,
   }),
   [LOAD_QUESTIONS_FAILURE]: state => ({
     ...state,

@@ -4,7 +4,7 @@ import { ComponentLoader } from './shared/components/ComponentLoader';
 import { Nav } from './shared/components/Nav';
 import { Route, Switch, BrowserRouter, Redirect } from 'react-router-dom';
 import { Loader } from './shared/components/Loader';
-import Home from './home/Home';
+import Main from './game/containers/Main';
 import { store } from './store';
 import { Provider } from 'react-redux';
 import './App.scss';
@@ -25,7 +25,7 @@ export function App() {
               <Switch>
                 <Route exact path="/settings" component={Settings} />
 
-                <Route exact path="/" component={Home} />
+                <Route exact path="/" component={Main} />
 
                 <Redirect to="/" />
               </Switch>
