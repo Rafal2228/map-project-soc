@@ -6,9 +6,14 @@
 .map {
   &__wrapper {
     @include mapSize();
+    position: relative;
   }
 
   &__svg {
     @include mapSize();
+  }
+
+  &__background {
+    height: 100%;
   }
 }

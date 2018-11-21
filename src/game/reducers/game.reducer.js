@@ -3,7 +3,7 @@ import { START_GAME } from '../actions/home.actions';
 import { createReducer } from '../../shared/utils';
 
 const GAME_INITIAL_STATE = {
-  started: true,
+  started: false,
   answeredQuestions: [],
   skippedQuestions: [],
 };

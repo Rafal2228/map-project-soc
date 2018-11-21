@@ -6,4 +6,10 @@
     align-items: center;
     justify-content: center;
   }
+
+  &__wheel {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
 }

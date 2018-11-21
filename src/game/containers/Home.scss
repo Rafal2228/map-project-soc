@@ -1,0 +1,25 @@
+@import '../../theme.scss';
+@import '../../utils.scss';
+
+.home {
+  &__section {
+    max-width: 100%;
+    width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  &__button {
+    @include withTransition(background-color);
+    border: none;
+    background-color: $accent;
+    color: $white;
+    font-size: 1.2em;
+    padding: 1em;
+    cursor: pointer;
+
+    &:hover {
+      background-color: lighten($accent, 10);
+    }
+  }
+}
