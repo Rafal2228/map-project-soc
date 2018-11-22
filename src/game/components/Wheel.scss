@@ -1,0 +1,15 @@
+.wheel {
+  &__wrapper {
+    padding: 1em;
+    width: calc(200px + 2em);
+    height: calc(200px + 2em);
+  }
+
+  &__plate {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid black;
+  }
+}
