@@ -3,13 +3,18 @@ import React, { Component } from 'react';
 import './Game.scss';
 import { Map } from '../components/Map';
 import { connect } from 'react-redux';
-import { getCurrentMap } from '../../shared/selectors/atlas.selectors';
 import { Wheel } from '../components/Wheel';
+import { WHEEL_SPIN_DURATION } from '../constants';
+import { easeQuadOut } from 'd3-ease';
 
 function mapStateToProps(state) {
   return {
     map: getCurrentMap(state),
   };
+}
+
+function mapDispatchToProps(dispatch) {
+  return 
 }
 
 interface GameProps {
@@ -26,6 +31,7 @@ class Game extends Component<GameProps> {
   state = {
     selectedColorIndex: 0,
     colors: ['#FCFFFC', '#2BA84A'],
+    spinDuration: WHEEL_SPIN_DURATION,
   };
 
   handleSpin = () => {
@@ -60,6 +66,10 @@ class Game extends Component<GameProps> {
             numberOfSpins={this.audioRef.current ? 3 : 0}
             selectedColorIndex={state.selectedColorIndex}
             colors={state.colors}
+            config={{
+              duration: state.spinDuration,
+              easing: easeQuadOut,
+            }}
           />
         </div>
       </div>

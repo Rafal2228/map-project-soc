@@ -1,0 +1,22 @@
+.map-background {
+  z-index: 0;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+
+  &__svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  &__coordinates-wrapper {
+    
+  }
+
+  &__coordinate {
+
+  }
+}
