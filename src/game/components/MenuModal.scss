@@ -1,0 +1,35 @@
+@import '../../theme.scss';
+@import '../../utils.scss';
+
+.menu-modal {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    background-color: $primary;
+    min-width: 200px;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
+    font-size: 1.2em;
+  }
+
+  &__title {
+    color: $white;
+    font-size: 1.2em;
+    margin-bottom: 1em;
+  }
+
+  &__button {
+    @include withTransition(background-color);
+    padding: 0.5em;
+    background-color: lighten($primary, 10);
+    color: $white;
+    border: 1px solid $white;
+    margin: 0.5em 0;
+    cursor: pointer;
+    text-align: center;
+
+    &:hover {
+      background-color: darken($primary, 10);
+    }
+  }
+}

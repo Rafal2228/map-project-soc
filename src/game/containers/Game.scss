@@ -1,3 +1,6 @@
+@import '../../utils.scss';
+@import '../../theme.scss';
+
 .game {
   &__wrapper {
     position: relative;
@@ -11,5 +14,24 @@
     position: absolute;
     left: 0;
     bottom: 0;
+  }
+
+  &__menu-button-wrapper {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  &__menu-button {
+    @include withTransition(background-color);
+    padding: 1em;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: $primary;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.2);
+    }
   }
 }

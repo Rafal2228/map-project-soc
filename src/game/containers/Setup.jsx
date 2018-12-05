@@ -10,6 +10,8 @@ const mapDispatchToProps = {
 };
 
 interface SetupProps {
+  children: React$Node;
+
   loadQuestions: (url: string) => void;
 }
 
