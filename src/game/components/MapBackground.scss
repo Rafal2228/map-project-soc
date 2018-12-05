@@ -13,10 +13,14 @@
   }
 
   &__coordinates-wrapper {
-    
+    path {
+      fill: none;
+      stroke: #42210b;
+      stroke-width: 1;
+      stroke-miterlimit: 10;
+    }
   }
 
   &__coordinate {
-
   }
 }
