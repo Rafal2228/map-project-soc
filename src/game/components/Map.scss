@@ -1,6 +1,7 @@
 @mixin mapSize() {
-  height: 80vmin;
-  width: 80vmin;
+  display: block;
+  height: 100vmin;
+  width: 100vmin;
 }
 
 .map {

@@ -1,10 +1,10 @@
 // @flow
 import React, { Component } from 'react';
 import './Game.scss';
-// import { Map } from '../components/Map';
+import { Map } from '../components/Map';
 import { connect } from 'react-redux';
 import { Wheel } from '../components/Wheel';
-import { WHEEL_SPIN_DURATION } from '../constants';
+import { WHEEL_SPIN_DURATION, MAP_ISLANDS, MAP_VIEWBOX } from '../constants';
 import { QuestionWithCategory } from '../models';
 import { easeQuadOut } from 'd3-ease';
 import { MenuModal } from '../components/MenuModal';
@@ -120,7 +120,7 @@ class Game extends Component<GameProps, any> {
       <div className="game__wrapper">
         <audio src="/assets/lucky-spin-sound.mp3" hidden ref={this.audioRef} />
 
-        {/* <Map tiles={props.map.tiles} viewBox={props.map.viewBox} /> */}
+        <Map islands={MAP_ISLANDS} viewBox={MAP_VIEWBOX} />
 
         <div className="game__wheel">
           <Wheel

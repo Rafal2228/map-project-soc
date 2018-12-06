@@ -1,8 +1,8 @@
 .map-tile {
-  fill: white;
+  fill: black;
   opacity: 0;
   stroke: none;
-  animation: mapTileFade 0.4s forwards;
+  animation: mapTileFade 1s forwards;
 }
 
 @keyframes mapTileFade {

@@ -1,10 +1,13 @@
 .map-background {
-  z-index: 0;
+  z-index: -1;
   position: fixed;
   left: 0;
   top: 0;
   right: 0;
   bottom: 0;
+  background-image: url('/assets/paper.svg');
+  background-size: cover;
+  background-position: center center;
 
   &__svg {
     width: 100%;
@@ -12,15 +15,10 @@
     display: block;
   }
 
-  &__coordinates-wrapper {
-    path {
-      fill: none;
-      stroke: #42210b;
-      stroke-width: 1;
-      stroke-miterlimit: 10;
-    }
-  }
-
   &__coordinate {
+    fill: none;
+    stroke: rgba(0, 0, 0, 0.2);
+    stroke-width: 1;
+    stroke-miterlimit: 10;
   }
 }
