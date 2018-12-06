@@ -6,6 +6,8 @@ import './Map.scss';
 interface MapProps {
   viewBox: string;
   islands: string[];
+  currentSegments: number;
+  totalSegments: number;
 }
 
 export function Map(props: MapProps) {

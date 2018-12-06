@@ -9,6 +9,7 @@ import {
   CLOSE_MENU,
   END_GAME,
 } from '../actions/game.actions';
+import { TARGET_ANSWERS_NUMBER } from '../constants';
 
 const GAME_INITIAL_STATE = {
   started: false,
@@ -16,6 +17,7 @@ const GAME_INITIAL_STATE = {
   skippedQuestions: [],
   currentQuestion: null,
   menuOpened: false,
+  targetAnswersNumber: TARGET_ANSWERS_NUMBER,
 };
 
 export const gameReducer = createReducer(GAME_INITIAL_STATE, {

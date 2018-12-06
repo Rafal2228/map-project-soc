@@ -17,19 +17,27 @@ import {
   NEXT_QUESTION,
   END_GAME,
 } from '../actions/game.actions';
-import { getCurrentQuestion, getGameState, getLeftQuestions, getCategoriesNames } from '../selectors/game.selectors';
+import {
+  getCurrentQuestion,
+  getGameState,
+  getLeftQuestions,
+  getCategoriesNames,
+  getAnsweredQuestions,
+} from '../selectors/game.selectors';
 import { changeQuestions } from '../thunks/questions.thunks';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCog } from '@fortawesome/free-solid-svg-icons';
 
 function mapStateToProps(state) {
-  const { menuOpened } = getGameState(state);
+  const { menuOpened, targetAnswersNumber } = getGameState(state);
 
   return {
     currentQuestion: getCurrentQuestion(state),
     leftQuestions: getLeftQuestions(state),
+    answeredQuestions: getAnsweredQuestions(state),
     categoriesNames: getCategoriesNames(state),
     menuOpened,
+    targetAnswersNumber,
   };
 }
 
@@ -71,6 +79,8 @@ interface GameProps {
   menuOpened: boolean;
   currentQuestion: QuestionWithCategory;
   leftQuestions: QuestionWithCategory[];
+  answeredQuestions: QuestionWithCategory[];
+  targetAnswersNumber: number;
 
   closeMenu: () => void;
   openMenu: () => void;
@@ -120,7 +130,12 @@ class Game extends Component<GameProps, any> {
       <div className="game__wrapper">
         <audio src="/assets/lucky-spin-sound.mp3" hidden ref={this.audioRef} />
 
-        <Map islands={MAP_ISLANDS} viewBox={MAP_VIEWBOX} />
+        <Map
+          currentSegments={props.answeredQuestions.length}
+          totalSegments={props.targetAnswersNumber}
+          islands={MAP_ISLANDS}
+          viewBox={MAP_VIEWBOX}
+        />
 
         <div className="game__wheel">
           <Wheel

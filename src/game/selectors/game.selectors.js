@@ -54,17 +54,27 @@ const getSkippedQuestions = createSelector(
   }
 );
 
-const getAnsweredQuestions = createSelector(
+const getAnsweredQuestionIds = createSelector(
   getGameState,
   function(gameState) {
     return gameState.answeredQuestions;
   }
 );
 
+export const getAnsweredQuestions = createSelector(
+  getFlatQuestionsWithCategories,
+  getAnsweredQuestionIds,
+  function(flatQuestions, answeredQuestions) {
+    const answered = [...(answeredQuestions || [])];
+
+    return answered.map(id => flatQuestions.find(q => q.id === id));
+  }
+);
+
 export const getLeftQuestions = createSelector(
   getFlatQuestionsWithCategories,
   getSkippedQuestions,
-  getAnsweredQuestions,
+  getAnsweredQuestionIds,
   function(flatQuestions, skippedQuestions, answeredQuestions) {
     const used = [...(skippedQuestions || []), ...(answeredQuestions || [])];
 
