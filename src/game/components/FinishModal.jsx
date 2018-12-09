@@ -13,7 +13,7 @@ export function FinishModal(props: FinishModalProps) {
   return (
     <Modal open={props.open}>
       <div className="finish-modal__wrapper">
-        <h2>Gratulacje!</h2>
+        <span className="finish-modal__title">Gratulacje!</span>
 
         <button className="finish-modal__button" onClick={props.onClose}>
           Zakończ

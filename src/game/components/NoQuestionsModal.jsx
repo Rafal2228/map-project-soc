@@ -13,7 +13,7 @@ export function NoQuestionsModal(props: NoQuestionsModalProps) {
   return (
     <Modal open={props.open}>
       <div className="no-questions-modal__wrapper">
-        <h2>Nie mamy dla was więcej pytań :(</h2>
+        <span className="no-questions-modal__title">Nie mamy dla was więcej pytań :(</span>
 
         <button className="no-questions-modal__button" onClick={props.onClose}>
           Zakończ grę

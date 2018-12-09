@@ -18,7 +18,7 @@ export function QuestionModal(props: QuestionModalProps) {
       {props.question && (
         <>
           <div className="question-modal__wrapper">
-            <div className="question-modal__category">Kategoria: {props.question.categoryName}</div>
+            {/* <div className="question-modal__category">Kategoria: {props.question.categoryName}</div> */}
             <div className="question-modal__question">{props.question.content}</div>
 
             <div className="question-modal__buttons">

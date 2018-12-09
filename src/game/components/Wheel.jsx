@@ -2,7 +2,7 @@
 import React from 'react';
 import './Wheel.scss';
 import { Spring, SpringConfig } from 'react-spring';
-import WheelPlate from './WheelPlate';
+// import WheelPlate from './WheelPlate';
 
 interface WheelProps {
   angle: number;
@@ -34,7 +34,8 @@ export const Wheel = React.memo<WheelProps>(
         >
           {prop => (
             <div style={prop} className="wheel__plate">
-              <WheelPlate angle={props.angle} colors={props.colors} />
+              <img className="wheel__compass" src="/assets/compass.svg" alt="" />
+              {/* <WheelPlate angle={props.angle} colors={props.colors} /> */}
             </div>
           )}
         </Spring>

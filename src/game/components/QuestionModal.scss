@@ -8,6 +8,7 @@
     padding: 1em;
     background-color: $primary;
     min-width: 400px;
+    max-width: 80vmin;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
     font-size: 1.2em;
   }
@@ -23,6 +24,8 @@
     color: $white;
     font-size: 1.2em;
     margin-bottom: 1em;
+    text-align: center;
+    line-height: 1.5;
   }
 
   &__buttons {
