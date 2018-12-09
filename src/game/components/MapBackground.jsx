@@ -53,16 +53,10 @@ function MapBackground(props: MapBackgroundProps) {
     <Coordinate key={d} className="map-background__coordinate" d={d} index={index} />
   ));
 
-  // const islandItems = islands && islands.map((d, index) => <path key={`island-${index}`} d={d} />);
-
   return (
     <div className="map-background">
       <svg className="map-background__svg" viewBox={`0 0 ${width} ${height}`}>
         <g>{coordinateItems}</g>
-
-        {/* <svg width="100%" height="100%" viewBox={props.viewBox}>
-          <g className="map-background__islands-wrapper">{islandItems}</g>
-        </svg> */}
       </svg>
     </div>
   );

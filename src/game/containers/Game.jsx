@@ -22,7 +22,8 @@ import {
   ANSWER_QUESTION,
   SKIP_QUESTION,
   NEXT_QUESTION,
-  END_GAME
+  END_GAME,
+  FINSH_GAME
 } from '../actions/game.actions';
 import {
   getCurrentQuestion,
@@ -34,6 +35,7 @@ import {
 import { changeQuestions } from '../thunks/questions.thunks';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCog } from '@fortawesome/free-solid-svg-icons';
+import { FinishModal } from '../components/FinishModal';
 
 function mapStateToProps(state) {
   const { menuOpened, targetAnswersNumber } = getGameState(state);
@@ -79,6 +81,11 @@ const mapDispatchToProps = {
       dispatch({ type: END_GAME });
     };
   },
+  finishGame() {
+    return function(dispatch) {
+      dispatch({ type: FINSH_GAME });
+    };
+  },
   changeQuestions
 };
 
@@ -96,6 +103,7 @@ interface GameProps {
   skipQuestion: () => void;
   endGame: () => void;
   changeQuestions: (files: File[]) => void;
+  finishGame: () => void;
 }
 
 class Game extends Component<GameProps, any> {
@@ -181,6 +189,8 @@ class Game extends Component<GameProps, any> {
           onAnswer={props.answerQuestion}
           onSkip={props.skipQuestion}
         />
+
+        <FinishModal open={props.answeredQuestions.length >= props.targetAnswersNumber} onClose={props.finishGame} />
       </div>
     );
   }

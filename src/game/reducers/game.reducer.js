@@ -8,6 +8,7 @@ import {
   OPEN_MENU,
   CLOSE_MENU,
   END_GAME,
+  FINSH_GAME
 } from '../actions/game.actions';
 import { TARGET_ANSWERS_NUMBER } from '../constants';
 
@@ -17,38 +18,42 @@ const GAME_INITIAL_STATE = {
   skippedQuestions: [],
   currentQuestion: null,
   menuOpened: false,
-  targetAnswersNumber: TARGET_ANSWERS_NUMBER,
+  targetAnswersNumber: TARGET_ANSWERS_NUMBER
 };
 
 export const gameReducer = createReducer(GAME_INITIAL_STATE, {
   [START_GAME]: state => ({
     ...state,
-    started: true,
+    started: true
   }),
   [NEXT_QUESTION]: (state, { payload }) => ({
     ...state,
-    currentQuestion: payload.question && payload.question.id,
+    currentQuestion: payload.question && payload.question.id
   }),
   [ANSWER_QUESTION]: state => ({
     ...state,
     answeredQuestions: [...state.answeredQuestions, state.currentQuestion],
-    currentQuestion: null,
+    currentQuestion: null
   }),
   [SKIP_QUESTION]: state => ({
     ...state,
     skippedQuestions: [...state.skippedQuestions, state.currentQuestion],
-    currentQuestion: null,
+    currentQuestion: null
   }),
   [OPEN_MENU]: state => ({
     ...state,
-    menuOpened: true,
+    menuOpened: true
   }),
   [CLOSE_MENU]: state => ({
     ...state,
-    menuOpened: false,
+    menuOpened: false
   }),
   [END_GAME]: state => ({
     ...state,
-    ...GAME_INITIAL_STATE,
+    ...GAME_INITIAL_STATE
   }),
+  [FINSH_GAME]: state => ({
+    ...state,
+    ...GAME_INITIAL_STATE
+  })
 });

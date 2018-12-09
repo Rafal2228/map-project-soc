@@ -1,36 +1,153 @@
 {
   "categories": [
     {
-      "name": "Psycho",
+      "name": "Filozofia",
       "questions": [
         {
-          "content": "Opisz zjawisko deprywacji sensorycznej"
+          "content": "Kim jestem?"
         },
         {
-          "content": "Co to jest świadomość introspekcyjna?"
+          "content": "Dokąd zmierzam?"
         },
         {
-          "content": "Czym jest i jaką rolę w procesie samoregulacji pełni uwaga?"
+          "content": "Czy mogę wszystko wyjaśnić?"
         },
         {
-          "content": "Jakim rodzajem umysłowej reprezentacji jest schemat?"
+          "content": "Czym jest świat? Czas?"
         },
         {
-          "content": "Na czym polega proces autopercepcji?"
+          "content": "Co jest dobre? Co jest złe?"
+        },
+        {
+          "content": "Kim jest człowiek?"
+        },
+        {
+          "content": "Czy jest dobre życie dla ludzi?"
+        },
+        {
+          "content": "Czy istnieje życie pozaziemskie?"
+        },
+        {
+          "content": "Czy mamy duszę?"
+        },
+        {
+          "content": "Jaki był początek świata?"
+        },
+        {
+          "content": "Czy świat jest zawsze taki sam?"
+        },
+        {
+          "content": "Czy życie ma sens?"
+        },
+        {
+          "content": "Czy po śmierci umiera też nasza świadomość?"
+        },
+        {
+          "content": "Czy ktoś stworzył świat?"
+        },
+        {
+          "content": "Czy świat istniał od zawsze?"
+        },
+        {
+          "content": "Czy Bóg istnieje?"
+        },
+        {
+          "content": "Co może sprawić, że będziesz szczęśliwy?"
+        },
+        {
+          "content": "Dlaczego życie jest czasem trudne?"
+        },
+        {
+          "content": "Dlaczego istnieje człowiek?"
+        },
+        {
+          "content": "Dlaczego i po co żyjemy?"
+        },
+        {
+          "content": "Dlaczego umieramy?"
+        },
+        {
+          "content": "Dlaczego kłócimy się z tymi których bardzo kochamy?"
         }
       ]
     },
     {
-      "name": "Stress",
+      "name": "Metody radzenia sobie ze stresem",
       "questions": [
         {
-          "content": "Jak radzić sobie ze stresem (skuteczne sposoby na stres)"
+          "content": "Jakie uczucia towarzyszą Ci/Wam jak dowiadujecie się że przeprowadzasz/przeprowadzacie się do innego miasta?"
         },
         {
-          "content": "Jak się nie denerwować i opanować nerwy w trudnych sytuacjach"
+          "content": "Jak postąpisz w sytuacji gdy na swojej drodze napotkacie szczura?"
         },
         {
-          "content": "Jak ograniczyć stresory"
+          "content": "Jak zareagujesz gdy w momencie otrzymania prezentu okazuje się że to nie jest prezent o jakim marzyłaś/eś?"
+        },
+        {
+          "content": "Jak się zachowasz w chwili zobaczenia po raz pierwszy swojego nowego pokoju?"
+        },
+        {
+          "content": "Co robisz w sytuacji gdy kładziesz się spać, w pokoju jest ciemno i słyszysz różne dźwięki, które nie pozwalają ci usnąć?"
+        },
+        {
+          "content": "Jak zareagujesz w sytuacji gdy nagle twoi rodzice zaczną się kłócić?"
+        },
+        {
+          "content": "Wyobraź sobie taką sytuację gdy nagle w szkole na bluzkę/T-shirt rozlejesz sobie sok marchwiowy i masz wielką plamę na przodzie, a nie masz nic do przebrania i też za bardzo nie możesz zdjąć jej z siebie ?"
+        },
+        {
+          "content": "Co czujesz gdy za chwilkę musisz się przedstawić nowej grupie dzieci?"
+        },
+        {
+          "content": "Czekasz na przerwie przed lekcją na której będzie klasówka, a Ty nie jesteś przygotowany/ana . Jak sie zachowujesz?"
+        },
+        {
+          "content": "Jak się zachowasz w sytuacji gdy Twój nauczyciel nagle zemdleje na lekcji?"
+        },
+        {
+          "content": "Co zrobisz gdy się zgubisz na lotnisku, dworcu kolejowym lub obiekcie sportowym?"
+        },
+        {
+          "content": "Jesteś w sklepie zrobiłaś/łeś zakupy i przy kasie okazuje się że nie wziąłeś/łaś ze sobą pieniędzy?"
+        },
+        {
+          "content": "Na szkolnym korytarzu widzisz jak twój kolega/koleżanka z klasy płaczą, co robisz w takiej sytuacji?"
+        },
+        {
+          "content": "Jak się zachowasz gdy próbowałeś/łaś coś ukryć przed mamą, a okazuje się że mama to już wie i próbuje to z Ciebie wyciągnąć?"
+        },
+        {
+          "content": "Jesteś na zajęciach nauki jazdy na nartach i okazuje się że wszyscy dają sobie dużo lepiej radę niż Ty, co zrobisz w takiej sytuacji?"
+        },
+        {
+          "content": "Jak sobie radzę z nieprzygotowaniem do sprawdzianu?"
+        },
+        {
+          "content": "Jak radzę sobie z ocenami innych dzieci?"
+        },
+        {
+          "content": "Jak radzę sobie ze strachem przed nauczycielem?"
+        },
+        {
+          "content": "Co czuje i jak sobie poradzić z brakiem szacunku od rodziców?"
+        },
+        {
+          "content": "Co czuje i jak radzę sobie z krytyką rodziców/nauczycieli?"
+        },
+        {
+          "content": "Co zrobić, aby nie wstydzić się swoich uczuć?"
+        },
+        {
+          "content": "Co mogę zrobić, aby grupa mnie nie odrzucała?"
+        },
+        {
+          "content": "Dlaczego czasami czuję się samotny/samotna i jak sobie z tym poradzić?"
+        },
+        {
+          "content": "Do czego tak naprawdę jestem potrzeba/potrzebny?"
+        },
+        {
+          "content": "Jak poprosić o pomoc dorosłych?"
         }
       ]
     }
