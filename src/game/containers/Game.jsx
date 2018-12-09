@@ -4,7 +4,14 @@ import './Game.scss';
 import { Map } from '../components/Map';
 import { connect } from 'react-redux';
 import { Wheel } from '../components/Wheel';
-import { WHEEL_SPIN_DURATION, MAP_ISLANDS, MAP_VIEWBOX } from '../constants';
+import {
+  WHEEL_SPIN_DURATION,
+  MAP_ISLANDS,
+  MAP_VIEWBOX,
+  MAP_PATH_START,
+  MAP_PATH_END,
+  MAP_PATH_CENTER
+} from '../constants';
 import { QuestionWithCategory } from '../models';
 import { easeQuadOut } from 'd3-ease';
 import { MenuModal } from '../components/MenuModal';
@@ -15,14 +22,14 @@ import {
   ANSWER_QUESTION,
   SKIP_QUESTION,
   NEXT_QUESTION,
-  END_GAME,
+  END_GAME
 } from '../actions/game.actions';
 import {
   getCurrentQuestion,
   getGameState,
   getLeftQuestions,
   getCategoriesNames,
-  getAnsweredQuestions,
+  getAnsweredQuestions
 } from '../selectors/game.selectors';
 import { changeQuestions } from '../thunks/questions.thunks';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -37,7 +44,7 @@ function mapStateToProps(state) {
     answeredQuestions: getAnsweredQuestions(state),
     categoriesNames: getCategoriesNames(state),
     menuOpened,
-    targetAnswersNumber,
+    targetAnswersNumber
   };
 }
 
@@ -72,7 +79,7 @@ const mapDispatchToProps = {
       dispatch({ type: END_GAME });
     };
   },
-  changeQuestions,
+  changeQuestions
 };
 
 interface GameProps {
@@ -97,7 +104,7 @@ class Game extends Component<GameProps, any> {
     selectedColorIndex: 0,
     colors: ['#FCFFFC', '#2BA84A'],
     spinDuration: WHEEL_SPIN_DURATION,
-    nextQuestionId: '',
+    nextQuestionId: ''
   };
 
   handleSpin = () => {
@@ -118,7 +125,7 @@ class Game extends Component<GameProps, any> {
 
       return {
         selectedColorIndex: Math.floor(Math.random() * state.colors.length),
-        nextQuestionId: nextQuestion.id,
+        nextQuestionId: nextQuestion.id
       };
     });
   };
@@ -135,6 +142,9 @@ class Game extends Component<GameProps, any> {
           totalSegments={props.targetAnswersNumber}
           islands={MAP_ISLANDS}
           viewBox={MAP_VIEWBOX}
+          start={MAP_PATH_START}
+          end={MAP_PATH_END}
+          center={MAP_PATH_CENTER}
         />
 
         <div className="game__wheel">
@@ -147,7 +157,7 @@ class Game extends Component<GameProps, any> {
             nextQuestionId={state.nextQuestionId}
             config={{
               duration: state.spinDuration,
-              easing: easeQuadOut,
+              easing: easeQuadOut
             }}
           />
         </div>

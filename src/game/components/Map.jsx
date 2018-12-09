@@ -2,22 +2,23 @@
 import React from 'react';
 import { MapTile } from './MapTile';
 import './Map.scss';
+import { MapPath, MapPathProps } from './MapPath';
 
-interface MapProps {
+export interface MapProps extends MapPathProps {
   viewBox: string;
   islands: string[];
-  currentSegments: number;
-  totalSegments: number;
 }
 
 export function Map(props: MapProps) {
-  const { islands } = props;
+  const { islands, viewBox, ...rest } = props;
   const islandItems = islands && islands.map(island => <MapTile d={island} key={island} />);
 
   return (
     <div className="map__wrapper">
       <svg className="map__svg" viewBox={props.viewBox}>
         <g>{islandItems}</g>
+
+        <MapPath {...rest} />
       </svg>
     </div>
   );
