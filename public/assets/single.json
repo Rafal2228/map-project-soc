@@ -1,0 +1,12 @@
+{
+  "categories": [
+    {
+      "name": "Filozofia",
+      "questions": [
+        {
+          "content": "Kim jestem?"
+        }
+      ]
+    }
+  ]
+}

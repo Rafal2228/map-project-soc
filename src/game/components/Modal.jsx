@@ -6,7 +6,7 @@ import './Modal.scss';
 
 const ModalSpring = Keyframes.Spring({
   opened: [{ y: 0, opacity: 1, from: { y: 50, opacity: 0 } }],
-  closed: [{ y: -50, opacity: 0 }],
+  closed: [{ y: -50, opacity: 0 }]
 });
 
 export interface ModalProps {
@@ -28,7 +28,7 @@ export const Modal = React.memo<ModalProps>(
             onClick={() => props.closeOnDimmerClick && props.onClose && props.onClose()}
             style={{
               opacity: styles.opacity,
-              display: styles.opacity === 0 ? 'none' : 'flex',
+              display: styles.opacity === 0 ? 'none' : 'flex'
             }}
           >
             <animated.div
@@ -36,7 +36,7 @@ export const Modal = React.memo<ModalProps>(
               onClick={e => e.stopPropagation()}
               style={{
                 transform: `translateY(${styles.y}%)`,
-                opacity: styles.opacity,
+                opacity: styles.opacity
               }}
             >
               {props.children}

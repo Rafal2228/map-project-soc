@@ -36,6 +36,7 @@ import { changeQuestions } from '../thunks/questions.thunks';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCog } from '@fortawesome/free-solid-svg-icons';
 import { FinishModal } from '../components/FinishModal';
+import { NoQuestionsModal } from '../components/NoQuestionsModal';
 
 function mapStateToProps(state) {
   const { menuOpened, targetAnswersNumber } = getGameState(state);
@@ -124,7 +125,7 @@ class Game extends Component<GameProps, any> {
 
     this.setState(state => {
       const { leftQuestions } = this.props;
-      const nextQuestion = leftQuestions[Math.ceil(Math.random() * (leftQuestions.length - 1)) - 1];
+      const nextQuestion = leftQuestions[Math.ceil(Math.random() * (leftQuestions.length - 1))];
       audio.play();
 
       setTimeout(() => {
@@ -191,6 +192,8 @@ class Game extends Component<GameProps, any> {
         />
 
         <FinishModal open={props.answeredQuestions.length >= props.targetAnswersNumber} onClose={props.finishGame} />
+
+        <NoQuestionsModal open={props.leftQuestions.length === 0 && !props.currentQuestion} onClose={props.endGame} />
       </div>
     );
   }

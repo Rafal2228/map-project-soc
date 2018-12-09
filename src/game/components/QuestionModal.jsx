@@ -18,16 +18,16 @@ export function QuestionModal(props: QuestionModalProps) {
       {props.question && (
         <>
           <div className="question-modal__wrapper">
-            <div className="question-modal__category">Category: {props.question.categoryName}</div>
+            <div className="question-modal__category">Kategoria: {props.question.categoryName}</div>
             <div className="question-modal__question">{props.question.content}</div>
 
             <div className="question-modal__buttons">
               <button className="question-modal__button" onClick={props.onAnswer}>
-                Answer
+                Wiem!
               </button>
               &nbsp;
               <button className="question-modal__button" onClick={props.onSkip}>
-                Skip
+                Nie wiem?
               </button>
             </div>
           </div>

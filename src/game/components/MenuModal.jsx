@@ -26,13 +26,13 @@ export function MenuModal(props: MenuModalProps) {
           multiple={false}
           onSelected={props.onChangeQuestions}
         >
-          Change questions
+          Zmień pytania
         </ChangeQuestionsButton>
         <button className="menu-modal__button" onClick={props.onEndGame}>
-          End game
+          Zakończ grę
         </button>
         <button className="menu-modal__button" onClick={props.onClose}>
-          Close menu
+          Zamknij menu
         </button>
       </div>
     </Modal>
