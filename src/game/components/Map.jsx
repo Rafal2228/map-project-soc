@@ -16,6 +16,12 @@ export function Map(props: MapProps) {
   return (
     <div className="map__wrapper">
       <svg className="map__svg" viewBox={props.viewBox}>
+        <defs>
+          <filter id="innerShadow" x="-40%" y="-40%" width="140%" height="140%">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur" />
+            <feOffset in="blur" dx="2.5" dy="2.5" />
+          </filter>
+        </defs>
         <g>{islandItems}</g>
 
         <MapPath {...rest} />

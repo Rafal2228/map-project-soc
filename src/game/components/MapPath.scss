@@ -1,11 +1,11 @@
 .map-path {
   fill: none;
-  stroke-width: 10px;
+  stroke-width: 40;
   stroke: white;
 
   &--red {
     fill: none;
-    stroke-width: 10px;
-    stroke: red;
+    stroke-width: 20;
+    stroke: rgba(255, 50, 50, 0.6);
   }
 }

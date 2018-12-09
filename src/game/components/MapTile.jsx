@@ -10,5 +10,5 @@ interface MapTileProps {
 }
 
 export function MapTile(props: MapTileProps) {
-  return <path className="map-tile" d={props.d} />;
+  return <path filter="url(#innerShadow)" className="map-tile" d={props.d} />;
 }

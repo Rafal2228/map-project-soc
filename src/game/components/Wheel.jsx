@@ -23,10 +23,10 @@ export const Wheel = React.memo<WheelProps>(
       <div className="wheel__wrapper" onClick={() => finished && props.onSpin()}>
         <Spring
           from={{
-            transform: 'rotateZ(0deg)',
+            transform: 'rotateZ(0deg)'
           }}
           to={{
-            transform: `rotateZ(${rotationTarget}deg)`,
+            transform: `rotateZ(${rotationTarget}deg)`
           }}
           reset
           config={props.config}
