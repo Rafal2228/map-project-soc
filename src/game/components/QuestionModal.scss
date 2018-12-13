@@ -20,10 +20,23 @@
     margin-bottom: 0.5em;
   }
 
+  &__question-wrapper {
+    margin-bottom: 1em;
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__counter {
+    flex: none;
+    width: 2em;
+    height: 2em;
+    margin-left: 1em;
+  }
+
   &__question {
+    flex: 1 auto;
     color: $white;
     font-size: 1.2em;
-    margin-bottom: 1em;
     text-align: center;
     line-height: 1.5;
   }

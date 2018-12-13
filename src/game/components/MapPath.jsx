@@ -1,11 +1,7 @@
 // @flow
 import React, { Component, createRef } from 'react';
 import './MapPath.scss';
-
-interface Point {
-  x: number;
-  y: number;
-}
+import { Point } from '../models';
 
 export interface MapPathProps {
   start: Point;

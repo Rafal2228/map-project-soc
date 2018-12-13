@@ -12,7 +12,7 @@ import {
   MAP_PATH_END,
   MAP_PATH_CENTER
 } from '../constants';
-import { QuestionWithCategory } from '../models';
+import { Question, QuestionWithCategory } from '../models';
 import { easeQuadOut } from 'd3-ease';
 import { MenuModal } from '../components/MenuModal';
 import { QuestionModal } from '../components/QuestionModal';
@@ -23,14 +23,17 @@ import {
   SKIP_QUESTION,
   NEXT_QUESTION,
   END_GAME,
-  FINSH_GAME
+  FINSH_GAME,
+  ANSWER_BONUS_QUESTION
 } from '../actions/game.actions';
 import {
   getCurrentQuestion,
   getGameState,
   getLeftQuestions,
   getCategoriesNames,
-  getAnsweredQuestions
+  getAnsweredQuestions,
+  getBonusQuestion,
+  getBonusQuestionAnswered
 } from '../selectors/game.selectors';
 import { changeQuestions } from '../thunks/questions.thunks';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -46,6 +49,8 @@ function mapStateToProps(state) {
     leftQuestions: getLeftQuestions(state),
     answeredQuestions: getAnsweredQuestions(state),
     categoriesNames: getCategoriesNames(state),
+    bonusQuestion: getBonusQuestion(state),
+    bonusQuestionAnswered: getBonusQuestionAnswered(state),
     menuOpened,
     targetAnswersNumber
   };
@@ -72,6 +77,11 @@ const mapDispatchToProps = {
       dispatch({ type: ANSWER_QUESTION });
     };
   },
+  answerBonusQuestion() {
+    return function(dispatch) {
+      dispatch({ type: ANSWER_BONUS_QUESTION });
+    };
+  },
   skipQuestion() {
     return function(dispatch) {
       dispatch({ type: SKIP_QUESTION });
@@ -92,6 +102,8 @@ const mapDispatchToProps = {
 
 interface GameProps {
   menuOpened: boolean;
+  bonusQuestion: Question | null;
+  bonusQuestionAnswered: boolean;
   currentQuestion: QuestionWithCategory;
   leftQuestions: QuestionWithCategory[];
   answeredQuestions: QuestionWithCategory[];
@@ -101,6 +113,7 @@ interface GameProps {
   openMenu: () => void;
   nextQuestion: (payload: { question: QuestionWithCategory }) => void;
   answerQuestion: () => void;
+  answerBonusQuestion: () => void;
   skipQuestion: () => void;
   endGame: () => void;
   changeQuestions: (files: File[]) => void;
@@ -113,7 +126,8 @@ class Game extends Component<GameProps, any> {
     selectedColorIndex: 0,
     colors: ['#FCFFFC', '#2BA84A'],
     spinDuration: WHEEL_SPIN_DURATION,
-    nextQuestionId: ''
+    nextQuestionId: '',
+    showBonusQuestion: false
   };
 
   handleSpin = () => {
@@ -139,6 +153,10 @@ class Game extends Component<GameProps, any> {
     });
   };
 
+  handleOpenBonusQuestion = () => {
+    this.setState({ showBonusQuestion: true });
+  };
+
   render() {
     const { props, state } = this;
 
@@ -154,22 +172,25 @@ class Game extends Component<GameProps, any> {
           start={MAP_PATH_START}
           end={MAP_PATH_END}
           center={MAP_PATH_CENTER}
+          onCrossClick={this.handleOpenBonusQuestion}
         />
 
-        <div className="game__wheel">
-          <Wheel
-            onSpin={this.handleSpin}
-            angle={20}
-            numberOfSpins={this.audioRef.current ? 3 : 0}
-            selectedColorIndex={state.selectedColorIndex}
-            colors={state.colors}
-            nextQuestionId={state.nextQuestionId}
-            config={{
-              duration: state.spinDuration,
-              easing: easeQuadOut
-            }}
-          />
-        </div>
+        {props.answeredQuestions.length < props.targetAnswersNumber && (
+          <div className="game__wheel">
+            <Wheel
+              onSpin={this.handleSpin}
+              angle={20}
+              numberOfSpins={this.audioRef.current ? 3 : 0}
+              selectedColorIndex={state.selectedColorIndex}
+              colors={state.colors}
+              nextQuestionId={state.nextQuestionId}
+              config={{
+                duration: state.spinDuration,
+                easing: easeQuadOut
+              }}
+            />
+          </div>
+        )}
 
         <div className="game__menu-button-wrapper">
           <button className="game__menu-button" onClick={props.openMenu}>
@@ -191,7 +212,25 @@ class Game extends Component<GameProps, any> {
           onSkip={props.skipQuestion}
         />
 
-        <FinishModal open={props.answeredQuestions.length >= props.targetAnswersNumber} onClose={props.finishGame} />
+        <QuestionModal
+          open={
+            props.answeredQuestions.length >= props.targetAnswersNumber &&
+            !!props.bonusQuestion &&
+            !props.bonusQuestionAnswered &&
+            state.showBonusQuestion
+          }
+          question={props.bonusQuestion}
+          onAnswer={props.answerBonusQuestion}
+          onSkip={props.answerBonusQuestion}
+        />
+
+        <FinishModal
+          open={
+            props.answeredQuestions.length >= props.targetAnswersNumber &&
+            (!props.bonusQuestion || props.bonusQuestionAnswered)
+          }
+          onClose={props.finishGame}
+        />
 
         <NoQuestionsModal open={props.leftQuestions.length === 0 && !props.currentQuestion} onClose={props.endGame} />
       </div>

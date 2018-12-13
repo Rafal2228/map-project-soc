@@ -1,6 +1,10 @@
 // @flow
 import { createSelector } from 'reselect';
 
+function getQuestionsState(state) {
+  return state.questions;
+}
+
 function getCategories(state) {
   return state.questions && state.questions.categories;
 }
@@ -79,5 +83,19 @@ export const getLeftQuestions = createSelector(
     const used = [...(skippedQuestions || []), ...(answeredQuestions || [])];
 
     return flatQuestions.filter(q => used.indexOf(q.id) === -1);
+  }
+);
+
+export const getBonusQuestion = createSelector(
+  getQuestionsState,
+  function(questions) {
+    return questions.bonusQuestion;
+  }
+);
+
+export const getBonusQuestionAnswered = createSelector(
+  getGameState,
+  function(state) {
+    return state.bonusQuestionAnswered;
   }
 );

@@ -13,3 +13,8 @@ export interface Category {
 export interface QuestionWithCategory extends Question {
   categoryName: string;
 }
+
+export interface Point {
+  x: number;
+  y: number;
+}

@@ -6,7 +6,7 @@ import {
   LOAD_QUESTIONS_SUCCESS,
   CHANGE_QUESTIONS,
   CHANGE_QUESTIONS_FAILURE,
-  CHANGE_QUESTIONS_SUCCESS,
+  CHANGE_QUESTIONS_SUCCESS
 } from '../actions/questions.actions';
 import { ThunkDispatch } from 'redux-thunk';
 import { parseQuestions } from '../helpers';
@@ -14,7 +14,7 @@ import { parseQuestions } from '../helpers';
 export function loadQuestions(url: string) {
   return async function(dispatch: ThunkDispatch) {
     dispatch({
-      type: LOAD_QUESTIONS,
+      type: LOAD_QUESTIONS
     });
 
     try {
@@ -23,11 +23,11 @@ export function loadQuestions(url: string) {
 
       dispatch({
         type: LOAD_QUESTIONS_SUCCESS,
-        payload,
+        payload
       });
     } catch (e) {
       dispatch({
-        type: LOAD_QUESTIONS_FAILURE,
+        type: LOAD_QUESTIONS_FAILURE
       });
     }
   };
@@ -36,7 +36,7 @@ export function loadQuestions(url: string) {
 export function changeQuestions(files: File[]) {
   return async function(dispatch: ThunkDispatch) {
     dispatch({
-      type: CHANGE_QUESTIONS,
+      type: CHANGE_QUESTIONS
     });
 
     try {
@@ -47,8 +47,8 @@ export function changeQuestions(files: File[]) {
         fr.addEventListener('load', () => {
           try {
             const data = JSON.parse(fr.result);
-            const categories = parseQuestions(data);
-            resolve(categories);
+            const parsed = parseQuestions(data);
+            resolve(parsed);
           } catch (e) {
             reject();
           }
@@ -63,11 +63,11 @@ export function changeQuestions(files: File[]) {
 
       dispatch({
         type: CHANGE_QUESTIONS_SUCCESS,
-        payload,
+        payload
       });
     } catch (e) {
       dispatch({
-        type: CHANGE_QUESTIONS_FAILURE,
+        type: CHANGE_QUESTIONS_FAILURE
       });
     }
   };

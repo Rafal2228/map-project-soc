@@ -1,0 +1,19 @@
+.map-cross {
+  opacity: 0;
+  animation: mapCrossFadeIn 0.4s ease 1s forwards;
+  cursor: pointer;
+
+  &__path {
+    fill: #cc242f;
+    stroke: none;
+  }
+}
+
+@keyframes mapCrossFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

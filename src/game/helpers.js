@@ -1,7 +1,7 @@
 import { guid } from '../shared/utils';
 
 export function parseQuestions(data) {
-  return ((data && data.categories) || []).map(category => {
+  const categories = ((data && data.categories) || []).map(category => {
     const questions = (category.questions || []).map(question => {
       question.id = question.id || guid();
 
@@ -10,7 +10,20 @@ export function parseQuestions(data) {
 
     return {
       ...category,
-      questions,
+      questions
     };
   });
+
+  const bonusQuestion =
+    data && data.bonusQuestion
+      ? {
+          ...data.bonusQuestion,
+          id: data.bonusQuestion.id || guid()
+        }
+      : null;
+
+  return {
+    categories,
+    bonusQuestion
+  };
 }

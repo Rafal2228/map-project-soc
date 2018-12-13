@@ -1,12 +1,13 @@
 // @flow
 import React from 'react';
 import { Modal } from './Modal';
-import { QuestionWithCategory } from '../models';
+import { Question } from '../models';
 import './QuestionModal.scss';
+import { Counter } from './Counter';
 
 export interface QuestionModalProps {
   open: boolean;
-  question: QuestionWithCategory;
+  question: Question;
 
   onAnswer: () => void;
   onSkip: () => void;
@@ -18,8 +19,13 @@ export function QuestionModal(props: QuestionModalProps) {
       {props.question && (
         <>
           <div className="question-modal__wrapper">
-            {/* <div className="question-modal__category">Kategoria: {props.question.categoryName}</div> */}
-            <div className="question-modal__question">{props.question.content}</div>
+            <div className="question-modal__question-wrapper">
+              <div className="question-modal__question">{props.question.content}</div>
+
+              <div className="question-modal__counter">
+                <Counter key={props.question.id} />
+              </div>
+            </div>
 
             <div className="question-modal__buttons">
               <button className="question-modal__button" onClick={props.onAnswer}>

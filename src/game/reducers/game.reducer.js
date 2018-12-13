@@ -8,7 +8,8 @@ import {
   OPEN_MENU,
   CLOSE_MENU,
   END_GAME,
-  FINSH_GAME
+  FINSH_GAME,
+  ANSWER_BONUS_QUESTION
 } from '../actions/game.actions';
 import { TARGET_ANSWERS_NUMBER } from '../constants';
 import { CHANGE_QUESTIONS_SUCCESS } from '../actions/questions.actions';
@@ -19,7 +20,8 @@ const GAME_INITIAL_STATE = {
   skippedQuestions: [],
   currentQuestion: null,
   menuOpened: false,
-  targetAnswersNumber: TARGET_ANSWERS_NUMBER
+  targetAnswersNumber: TARGET_ANSWERS_NUMBER,
+  bonusQuestionAnswered: false
 };
 
 export const gameReducer = createReducer(GAME_INITIAL_STATE, {
@@ -60,5 +62,9 @@ export const gameReducer = createReducer(GAME_INITIAL_STATE, {
   [CHANGE_QUESTIONS_SUCCESS]: state => ({
     ...state,
     ...GAME_INITIAL_STATE
+  }),
+  [ANSWER_BONUS_QUESTION]: state => ({
+    ...state,
+    bonusQuestionAnswered: true
   })
 });

@@ -1,0 +1,30 @@
+@import '../../theme.scss';
+
+.counter {
+  &__wrapper {
+    width: 2em;
+    height: 2em;
+    position: relative;
+  }
+
+  &__svg {
+    position: absolute;
+    width: 2em;
+    height: 2em;
+    transform: rotateZ(-90deg);
+  }
+
+  &__circle {
+    fill: none;
+    stroke: $accent;
+    stroke-width: 0.5;
+  }
+
+  &__digit {
+    width: 2em;
+    height: 2em;
+    color: $accent;
+    text-align: center;
+    line-height: 2em;
+  }
+}
