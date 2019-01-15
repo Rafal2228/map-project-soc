@@ -162,7 +162,7 @@ class Game extends Component<GameProps, any> {
 
     return (
       <div className="game__wrapper">
-        <audio src="/assets/lucky-spin-sound.mp3" hidden ref={this.audioRef} />
+        <audio src={`${process.env.PUBLIC_URL}/assets/lucky-spin-sound.mp3`} hidden ref={this.audioRef} />
 
         <Map
           currentSegments={props.answeredQuestions.length}

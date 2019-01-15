@@ -34,7 +34,7 @@ export const Wheel = React.memo<WheelProps>(
         >
           {prop => (
             <div style={prop} className="wheel__plate">
-              <img className="wheel__compass" src="/assets/compass.svg" alt="" />
+              <img className="wheel__compass" src={`${process.env.PUBLIC_URL}/assets/compass.svg`} alt="" />
               {/* <WheelPlate angle={props.angle} colors={props.colors} /> */}
             </div>
           )}
