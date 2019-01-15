@@ -33,6 +33,7 @@ function Home(props: HomeProps) {
           Zaczynamy
         </button>
         <br />
+        <br />
         <ChangeQuestionsButton
           className="home__button"
           accept=".json,application/json"
