@@ -1,0 +1,155 @@
+{
+  "bonusQuestion": {
+    "content": "Jak widzisz swój świat teraz?"
+  },
+  "categories": [
+    {
+      "name": "Filozofia",
+      "questions": [
+        {
+          "content": "Kim jestem?"
+        },
+        {
+          "content": "Dokąd zmierzam?"
+        },
+        {
+          "content": "Jak mogę uzyskać odpowiedzi na swoje pytania?"
+        },
+        {
+          "content": "Czym jest świat, czas?"
+        },
+        {
+          "content": "Co to jest dobro? Co to jest zło?"
+        },
+        {
+          "content": "Kim jest człowiek?"
+        },
+        {
+          "content": "Czy jest dobre życie dla ludzi?"
+        },
+        {
+          "content": "Jak wyobrażasz sobie życie pozaziemskie?"
+        },
+        {
+          "content": "Zdefiniuj, czym jest dusza"
+        },
+        {
+          "content": "Jaki był początek świata?"
+        },
+        {
+          "content": "Czy świat jest zawsze taki sam?"
+        },
+        {
+          "content": "Co dzieje się z nami po naszej śmierci?"
+        },
+        {
+          "content": "Czy ktoś stworzył świat?"
+        },
+        {
+          "content": "Czy świat istniał od zawsze?"
+        },
+        {
+          "content": "Jak wyobrażasz sobie Boga?"
+        },
+        {
+          "content": "Co sprawia, że ludzie są szczęśliwi?"
+        },
+        {
+          "content": "Dlaczego życie jest czasem trudne?"
+        },
+        {
+          "content": "Dlaczego istnieje człowiek?"
+        },
+        {
+          "content": "Dlaczego i po co żyjemy?"
+        },
+        {
+          "content": "Dlaczego życie się kończy?"
+        },
+        {
+          "content": "Dlaczego kłócimy się z tymi których bardzo kochamy?"
+        }
+      ]
+    },
+    {
+      "name": "Metody radzenia sobie ze stresem",
+      "questions": [
+        {
+          "content": "Jakie uczucia towarzyszą Ci jak dowiadujesz się, że przeprowadzasz się do innego miasta?"
+        },
+        {
+          "content": "Co zrobisz w sytuacji, gdy jesteś świadkiem wypadku samochodowego?"
+        },
+        {
+          "content": "Jak zareagujesz, gdy w momencie otrzymania prezentu okazuje się, że to nie jest prezent o jakim marzyłeś?"
+        },
+        {
+          "content": "Jak się zachowasz w chwili zobaczenia po raz pierwszy swojego nowego pokoju?"
+        },
+        {
+          "content": "Co robisz w sytuacji gdy kładziesz się spać, w pokoju jest ciemno i słyszysz różne dźwięki, które nie pozwalają ci usnąć?"
+        },
+        {
+          "content": "Jak zareagujesz w sytuacji, gdy nagle twoi rodzice zaczną się kłócić?"
+        },
+        {
+          "content": "Wyobraź sobie taką sytuację, gdy nagle w szkole na bluzkę rozlejesz sobie sok marchwiowy i masz wielką plamę na przodzie, a nie masz nic do przebrania i też za bardzo nie możesz zdjąć jej z siebie?"
+        },
+        {
+          "content": "Co czujesz, gdy za chwilkę musisz się przedstawić nowej grupie rówieśników?"
+        },
+        {
+          "content": "Czekasz na przerwie przed lekcją na której będzie klasówka, a Ty nie jesteś przygotowany. Jak sie zachowujesz?"
+        },
+        {
+          "content": "Jak się zachowasz w sytuacji gdy Twój nauczyciel nagle zemdleje na lekcji?"
+        },
+        {
+          "content": "Co zrobisz, gdy się zgubisz w tłumie?"
+        },
+        {
+          "content": "Jesteś w sklepie, zrobiłeś zakupy i przy kasie okazuje się, że nie wziąłeś ze sobą pieniędzy?"
+        },
+        {
+          "content": "Na szkolnym korytarzu widzisz jak twój kolega/koleżanka z klasy płacze, co robisz w takiej sytuacji?"
+        },
+        {
+          "content": "Jak się zachowasz gdy próbowałeś coś ukryć przed mamą, a okazuje się, że mama to już wie i próbuje to z Ciebie wyciągnąć?"
+        },
+        {
+          "content": "Jesteś na zajęciach nauki jazdy na nartach i okazuje się że wszyscy dają sobie dużo lepiej radę niż Ty, co zrobisz w takiej sytuacji?"
+        },
+        {
+          "content": "Jak sobie radzę z nieprzygotowaniem do sprawdzianu?"
+        },
+        {
+          "content": "Jak radzę sobie z ocenami innych?"
+        },
+        {
+          "content": "Jak radzę sobie ze strachem przed nauczycielem?"
+        },
+        {
+          "content": "Jak sobie poradzę z brakiem szacunku od rodziców?"
+        },
+        {
+          "content": "Co czuje i jak radzę sobie z krytyką rodziców/nauczycieli?"
+        },
+        {
+          "content": "Co zrobić, aby nie wstydzić się swoich uczuć?"
+        },
+        {
+          "content": "Co mogę zrobić, aby grupa mnie nie odrzucała?"
+        },
+        {
+          "content": "Dlaczego czasami czuję się samotny/samotna i jak sobie z tym poradzić?"
+        },
+        {
+          "content": "Do czego tak naprawdę jestem potrzebna/potrzebny?"
+        },
+        {
+          "content": "Jak poprosić o pomoc dorosłych?"
+        }
+      ]
+    }
+  ]
+}
