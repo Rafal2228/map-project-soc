@@ -11,7 +11,7 @@ function mapStateToProps(state) {
   const { started } = state && state.game;
 
   return {
-    started,
+    started
   };
 }
 
