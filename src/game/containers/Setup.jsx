@@ -6,7 +6,7 @@ import { withRouter } from 'react-router-dom';
 import { loadQuestions } from '../thunks/questions.thunks';
 
 const mapDispatchToProps = {
-  loadQuestions,
+  loadQuestions
 };
 
 interface SetupProps {
@@ -17,7 +17,7 @@ interface SetupProps {
 
 class Setup extends Component<SetupProps> {
   componentDidMount() {
-    this.props.loadQuestions('/assets/questions.json');
+    this.props.loadQuestions(`${process.env.PUBLIC_URL}/assets/questions.json`);
   }
 
   render() {

@@ -54,7 +54,10 @@ function MapBackground(props: MapBackgroundProps) {
   ));
 
   return (
-    <div className="map-background">
+    <div
+      className="map-background"
+      style={{ backgroundImage: `url('${process.env.PUBLIC_URL}/assets/map_background.jpg')` }}
+    >
       <svg className="map-background__svg" viewBox={`0 0 ${width} ${height}`}>
         <g>{coordinateItems}</g>
       </svg>
