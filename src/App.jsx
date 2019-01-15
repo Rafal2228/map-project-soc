@@ -11,7 +11,7 @@ import Setup from './game/containers/Setup';
 export function App() {
   return (
     <Provider store={store}>
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Setup>
           <Suspense fallback={<Loader />}>
             <div className="app__container">
